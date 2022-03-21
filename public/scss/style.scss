@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-decoration: none;
 }
 
 .account-button{
@@ -125,4 +128,63 @@
     grid-column: 1/3;
     grid-row: 3/4;
     border-top: 1px solid rgb(54, 54, 54);
+    display: flex;
+    justify-content: space-between;
+}
+
+.song{
+    padding: 5px;
+    margin-left: 15px;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    min-width: 250px;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.song__name{
+    color: white;
+    cursor: pointer;
+}
+
+.song__singer{
+    color: grey;
+    cursor: pointer;
+}
+
+.song__singer:hover{
+    color: white;
+}
+
+.song__like{
+    background-color: inherit;
+    cursor: pointer;
+    
+}
+
+.footer-button{
+    background-color: inherit;
+    cursor: pointer;
+}
+
+.playing-field{
+    padding: 5px;
+    margin: 0px 30px;
+    min-width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.playing-field__random{
+    margin-right: 15px;
+}
+
+.controls{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    flex-shrink: 0;
 }
