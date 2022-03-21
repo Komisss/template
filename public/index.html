@@ -9,6 +9,7 @@
       name="description"
       content="Web site created using create-react-app"
     />
+    <link rel="stylesheet" href="../../css/style.css">
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -23,9 +24,20 @@
   <body class="app">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <header class="header">
+    <div class="account-menu">
+      <button class="account-menu__button">
+        <img src="img/account-logo.png" alt="Лого аккаунта" class="account-menu__img" height="20" width="20">
+        Аккаунт
+        <img src="img/down-icon.png" alt="Развернуть меню" class="account-menu__img" height="18" width="25">
+        <div class="account-menu__content">
+          <a href="" class="account-menu__link">Аккаунт</a>
+          <a href="" class="account-menu__link">Профиль</a>
+          <a href="" class="account-menu__link">Перейти на Premium</a>
+          <a href="" class="account-menu__link">Выйти</a>
+        </div>
+        </div>
+      </button>
       
-    </header>
     <main class="content">
       
     </main>
