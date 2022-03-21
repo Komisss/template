@@ -283,6 +283,7 @@
   display: -ms-flexbox;
   display: flex;
   min-width: 250px;
+  max-width: 250px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -296,6 +297,9 @@
 .song__name {
   color: white;
   cursor: pointer;
+  text-overflow: ellipsis;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 
 .song__singer {

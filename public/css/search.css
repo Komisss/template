@@ -1,0 +1,29 @@
+@import url('style.css');
+html{
+    height: 100vh;
+    background: black;
+}
+
+.header{
+    justify-content: space-between;
+}
+
+.search{
+    flex-shrink: 0;
+}
+
+.search__logo{
+    position: relative;
+    left: 60px;
+    top: 5px;
+    flex-shrink: 0;
+}
+
+.search__field{
+    padding-left: 10px;
+    height: 30px;
+    width: 300px;
+    margin-left: 30px;
+    border-radius: 10px;
+    flex-shrink: 0;
+}

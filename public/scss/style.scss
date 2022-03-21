@@ -235,6 +235,7 @@ background: linear-gradient(180deg, rgba(37,40,35,1) 7%, rgba(0,0,0,0.8491771708
     //font-family: 'Open Sans', sans-serif;
     display: flex;
     min-width: 250px;
+    max-width: 250px;
     justify-content: space-between;
     align-items: center;
     flex-shrink: 0;
@@ -243,6 +244,8 @@ background: linear-gradient(180deg, rgba(37,40,35,1) 7%, rgba(0,0,0,0.8491771708
 .song__name{
     color: white;
     cursor: pointer;
+    text-overflow: ellipsis;
+    flex-wrap: nowrap;
 }
 
 .song__singer{
