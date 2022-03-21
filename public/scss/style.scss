@@ -5,6 +5,20 @@
     border: none;
     outline: none;
     text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    
+}
+
+$header-height: 60px;
+
+%card-options{
+    display: block;
+    padding: 15px;
+    width: 200px;
+    height: 280px;
+    background-color: rgb(32, 32, 32);
+    border-radius: 10px;
+    margin-left: 20px;
 }
 
 .account-button{
@@ -64,9 +78,9 @@
 
 .app{
       display: grid;
-      height: 100vh;
+      height: 100%;
       grid-template-columns: 242px 1fr;
-      grid-template-rows: 60px 1fr 100px;
+      grid-template-rows: $header-height 1fr 100px;
 }
 
 .header{
@@ -84,7 +98,9 @@
     background: rgb(40,138,20);
     background: linear-gradient(180deg, rgba(40,138,20,1) 31%, rgba(32,173,34,1) 56%, rgba(40,180,45,1) 77%, rgba(51,226,41,0.8491771708683473) 100%);
     padding: 10px 10px;
-    font-family: 'Open Sans', sans-serif;
+    position: sticky;
+    left: 0;
+    //font-family: 'Open Sans', sans-serif;
     
 }
 
@@ -117,10 +133,89 @@
 }
 
 .content{
-    background: rgb(70,80,62);
-    background: linear-gradient(180deg, rgba(70,80,62,1) 0%, rgba(41,51,41,0.8491771708683473) 100%);
+    background: rgb(37,40,35);
+background: linear-gradient(180deg, rgba(37,40,35,1) 7%, rgba(0,0,0,0.8491771708683473) 100%);
     grid-column: 2/3;
     grid-row: 1/3;
+    padding: ($header-height + 10px) 20px 20px 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    //font-family: 'Open Sans', sans-serif;
+}
+
+.section{
+    margin-bottom: 15px;
+}
+
+.block-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.block-title__all{
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.cards{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.card-album{
+    @extend %card-options;
+}
+
+.card-album:hover{
+    position: relative;
+    bottom: -3px;
+    left: -3px;
+}
+
+.card-album__image{
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.card-album__name{
+    display: inline-block;
+    color: white;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.card-album__singer{
+    display: inline-block;
+    color: #808080;
+}
+
+.card-singer{
+    @extend %card-options;
+}
+
+.card-singer:hover{
+    position: relative;
+    bottom: -3px;
+    left: -3px;
+}
+
+.card-singer__image{
+    margin-bottom: 10px;
+    border-radius: 85px;
+}
+
+.card-singer__name{
+    display: inline-block;
+    color: white;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.card-singer__tag{
+    display: inline-block;
+    color: #808080;
 }
 
 .footer{
@@ -130,12 +225,14 @@
     border-top: 1px solid rgb(54, 54, 54);
     display: flex;
     justify-content: space-between;
+    position: sticky;
+    bottom: 0;
 }
 
 .song{
     padding: 5px;
     margin-left: 15px;
-    font-family: 'Open Sans', sans-serif;
+    //font-family: 'Open Sans', sans-serif;
     display: flex;
     min-width: 250px;
     justify-content: space-between;
@@ -184,7 +281,7 @@
     display: flex;
     align-items: center;
     margin-right: 20px;
-    font-family: 'Open Sans', sans-serif;
+    //font-family: 'Open Sans', sans-serif;
     color: white;
     flex-shrink: 0;
 }

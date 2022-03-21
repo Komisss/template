@@ -6,6 +6,17 @@
   border: none;
   outline: none;
   text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.card-album, .card-singer {
+  display: block;
+  padding: 15px;
+  width: 200px;
+  height: 280px;
+  background-color: #202020;
+  border-radius: 10px;
+  margin-left: 20px;
 }
 
 .account-button {
@@ -70,7 +81,7 @@
 .app {
   display: -ms-grid;
   display: grid;
-  height: 100vh;
+  height: 100%;
   -ms-grid-columns: 242px 1fr;
       grid-template-columns: 242px 1fr;
   -ms-grid-rows: 60px 1fr 100px;
@@ -107,7 +118,9 @@
   background: -webkit-gradient(linear, left top, left bottom, color-stop(31%, #288a14), color-stop(56%, #20ad22), color-stop(77%, #28b42d), to(rgba(51, 226, 41, 0.849177)));
   background: linear-gradient(180deg, #288a14 31%, #20ad22 56%, #28b42d 77%, rgba(51, 226, 41, 0.849177) 100%);
   padding: 10px 10px;
-  font-family: 'Open Sans', sans-serif;
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
 }
 
 .navigation {
@@ -147,15 +160,100 @@
 }
 
 .content {
-  background: #46503e;
-  background: -webkit-gradient(linear, left top, left bottom, from(#46503e), to(rgba(41, 51, 41, 0.849177)));
-  background: linear-gradient(180deg, #46503e 0%, rgba(41, 51, 41, 0.849177) 100%);
+  background: #252823;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(7%, #252823), to(rgba(0, 0, 0, 0.849177)));
+  background: linear-gradient(180deg, #252823 7%, rgba(0, 0, 0, 0.849177) 100%);
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2/3;
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   grid-row: 1/3;
+  padding: 70px 20px 20px 20px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.section {
+  margin-bottom: 15px;
+}
+
+.block-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.block-title__all {
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.card-album:hover {
+  position: relative;
+  bottom: -3px;
+  left: -3px;
+}
+
+.card-album__image {
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.card-album__name {
+  display: inline-block;
+  color: white;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.card-album__singer {
+  display: inline-block;
+  color: #808080;
+}
+
+.card-singer:hover {
+  position: relative;
+  bottom: -3px;
+  left: -3px;
+}
+
+.card-singer__image {
+  margin-bottom: 10px;
+  border-radius: 85px;
+}
+
+.card-singer__name {
+  display: inline-block;
+  color: white;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.card-singer__tag {
+  display: inline-block;
+  color: #808080;
 }
 
 .footer {
@@ -173,12 +271,14 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
 }
 
 .song {
   padding: 5px;
   margin-left: 15px;
-  font-family: 'Open Sans', sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -244,7 +344,6 @@
       -ms-flex-align: center;
           align-items: center;
   margin-right: 20px;
-  font-family: 'Open Sans', sans-serif;
   color: white;
   -ms-flex-negative: 0;
       flex-shrink: 0;
