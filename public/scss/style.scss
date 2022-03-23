@@ -1,14 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    border: none;
-    outline: none;
-    text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
-    
-}
-
 $header-height: 60px;
 
 %card-options{
@@ -41,6 +30,11 @@ $header-height: 60px;
   
 .account-button__img{
     border-radius: 10px;
+}
+
+.account-button__arrow-down{
+    transform: rotate(90deg);
+    margin-right: 5px;
 }
   
 .account-button__content{
@@ -80,10 +74,10 @@ $header-height: 60px;
       display: grid;
       height: 100%;
       grid-template-columns: 242px 1fr;
-      grid-template-rows: $header-height 1fr 100px;
+      grid-template-rows: $header-height 1fr 90px;
 }
 
-.header{
+.hat{
     grid-column: 2/3;
     grid-row: 1/2;
     display: flex;
@@ -92,7 +86,7 @@ $header-height: 60px;
     z-index: 3;
 }
 
-.aside{
+.accordion{
     grid-column: 1/2;
     grid-row: 1/3;
     background: rgb(40,138,20);
@@ -144,7 +138,7 @@ background: linear-gradient(180deg, rgba(37,40,35,1) 7%, rgba(0,0,0,0.8491771708
     //font-family: 'Open Sans', sans-serif;
 }
 
-.section{
+.music-block{
     margin-bottom: 15px;
 }
 
@@ -218,7 +212,7 @@ background: linear-gradient(180deg, rgba(37,40,35,1) 7%, rgba(0,0,0,0.8491771708
     color: #808080;
 }
 
-.footer{
+.controls-panel{
     background-color: black;
     grid-column: 1/3;
     grid-row: 3/4;
@@ -230,8 +224,6 @@ background: linear-gradient(180deg, rgba(37,40,35,1) 7%, rgba(0,0,0,0.8491771708
 }
 
 .song{
-    padding: 5px;
-    margin-left: 15px;
     //font-family: 'Open Sans', sans-serif;
     display: flex;
     min-width: 250px;
@@ -263,7 +255,7 @@ background: linear-gradient(180deg, rgba(37,40,35,1) 7%, rgba(0,0,0,0.8491771708
     
 }
 
-.footer-button{
+.controls-panel-button{
     background-color: inherit;
     cursor: pointer;
 }
@@ -276,15 +268,59 @@ background: linear-gradient(180deg, rgba(37,40,35,1) 7%, rgba(0,0,0,0.8491771708
     align-items: center;
     justify-content: space-between;
 }
-.playing-field__random{
-    margin-right: 15px;
+
+.playing-field__play{
+    background-color: white;
+    padding-left: 1px;
+    padding-top: 5px;
+    height: 32px;
+    width: 32px;
+    border-radius: 16px;
+}
+
+.controls-panel{
+    padding: 0 16px;
+}
+
+.song__like:hover{
+    .like__color{
+        fill: white;
+    }
+}
+
+.playing-field__random:hover{
+    .random__color{
+        fill: rgb(216, 216, 216);
+    }
+}
+
+.playing-field__prev:hover{
+    .prev__color{
+        fill: rgb(216, 216, 216);
+    }
+}
+
+.playing-field__play:hover{
+    background-color: rgb(216, 216, 216);
+}
+
+.playing-field__next:hover{
+    .next__color{
+        fill: rgb(216, 216, 216);
+    }
+}
+
+.playing-field__again:hover{
+    .again__color{
+        fill: rgb(216, 216, 216);
+    }
 }
 
 .controls{
     display: flex;
     align-items: center;
-    margin-right: 20px;
     //font-family: 'Open Sans', sans-serif;
     color: white;
     flex-shrink: 0;
 }
+

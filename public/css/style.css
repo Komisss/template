@@ -1,13 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border: none;
-  outline: none;
-  text-decoration: none;
-  font-family: 'Open Sans', sans-serif;
-}
+@import url("reset.css");
 
 .card-album, .card-singer {
   display: block;
@@ -47,6 +38,12 @@
   border-radius: 10px;
 }
 
+.account-button__arrow-down {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  margin-right: 5px;
+}
+
 .account-button__content {
   display: none;
   position: absolute;
@@ -84,11 +81,11 @@
   height: 100%;
   -ms-grid-columns: 242px 1fr;
       grid-template-columns: 242px 1fr;
-  -ms-grid-rows: 60px 1fr 100px;
-      grid-template-rows: 60px 1fr 100px;
+  -ms-grid-rows: 60px 1fr 90px;
+      grid-template-rows: 60px 1fr 90px;
 }
 
-.header {
+.hat {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2/3;
@@ -107,7 +104,7 @@
   z-index: 3;
 }
 
-.aside {
+.accordion {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1/2;
@@ -180,7 +177,7 @@
           flex-direction: column;
 }
 
-.section {
+.music-block {
   margin-bottom: 15px;
 }
 
@@ -256,7 +253,7 @@
   color: #808080;
 }
 
-.footer {
+.controls-panel {
   background-color: black;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -277,8 +274,6 @@
 }
 
 .song {
-  padding: 5px;
-  margin-left: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -316,7 +311,7 @@
   cursor: pointer;
 }
 
-.footer-button {
+.controls-panel-button {
   background-color: inherit;
   cursor: pointer;
 }
@@ -336,8 +331,41 @@
           justify-content: space-between;
 }
 
-.playing-field__random {
-  margin-right: 15px;
+.playing-field__play {
+  background-color: white;
+  padding-left: 1px;
+  padding-top: 5px;
+  height: 32px;
+  width: 32px;
+  border-radius: 16px;
+}
+
+.controls-panel {
+  padding: 0 16px;
+}
+
+.song__like:hover .like__color {
+  fill: white;
+}
+
+.playing-field__random:hover .random__color {
+  fill: #d8d8d8;
+}
+
+.playing-field__prev:hover .prev__color {
+  fill: #d8d8d8;
+}
+
+.playing-field__play:hover {
+  background-color: #d8d8d8;
+}
+
+.playing-field__next:hover .next__color {
+  fill: #d8d8d8;
+}
+
+.playing-field__again:hover .again__color {
+  fill: #d8d8d8;
 }
 
 .controls {
@@ -347,7 +375,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-right: 20px;
   color: white;
   -ms-flex-negative: 0;
       flex-shrink: 0;

@@ -1,10 +1,10 @@
 @import url('style.css');
-html{
+.global{
     height: 100vh;
     background: black;
 }
 
-.header{
+.hat{
     justify-content: space-between;
 }
 
