@@ -1,4 +1,25 @@
-@import url("reset.css");
+html, body, div, button, span, applet, object, iframe, table, caption, tbody, tfoot, thead, tr, th, td, 
+del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, 
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, 
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
+	margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+	}
+:focus {
+	outline: 0;
+	}
+
+ol, ul {
+	list-style: none;
+	}
+
+  /* Выше были сбросы для браузеров */
 
 .card-album, .card-singer {
   display: block;
@@ -95,9 +116,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: right;
-      -ms-flex-pack: right;
-          justify-content: right;
+  -webkit-box-pack: space-between;
+      -ms-flex-pack: space-between;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -118,6 +139,14 @@
   position: -webkit-sticky;
   position: sticky;
   left: 0;
+}
+
+.search__field{
+  padding-left: 10px;
+  height: 30px;
+  width: 300px;
+  margin-left: 30px;
+  border-radius: 10px;
 }
 
 .navigation {
