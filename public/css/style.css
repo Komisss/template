@@ -1,25 +1,25 @@
-html, body, div, button, span, applet, object, iframe, table, caption, tbody, tfoot, thead, tr, th, td, 
-del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, 
-h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, 
+html, body, div, button, span, applet, object, iframe, table, caption, tbody, tfoot, thead, tr, th, td,
+del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,
 dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
-	margin: 0;
-    padding: 0;
-    -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-    border: none;
-    outline: none;
-    text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
-	}
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* remember to define focus styles! */
 :focus {
-	outline: 0;
-	}
+  outline: 0;
+}
 
 ol, ul {
-	list-style: none;
-	}
-
-  /* Выше были сбросы для браузеров */
+  list-style: none;
+}
 
 .card-album, .card-singer {
   display: block;
@@ -47,7 +47,7 @@ ol, ul {
   background-color: black;
   color: white;
   padding: 10px;
-  margin-right: 10px;
+  margin-right: 15px;
   margin-left: 10px;
   font-size: 16px;
   border: none;
@@ -97,13 +97,15 @@ ol, ul {
 }
 
 .app {
+  overflow: hidden;
   display: -ms-grid;
   display: grid;
-  height: 100%;
+  height: 100vh;
   -ms-grid-columns: 242px 1fr;
       grid-template-columns: 242px 1fr;
   -ms-grid-rows: 60px 1fr 90px;
       grid-template-rows: 60px 1fr 90px;
+  background-color: #141414;
 }
 
 .hat {
@@ -116,13 +118,19 @@ ol, ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-between;
-      -ms-flex-pack: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
   z-index: 3;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  background-color: #0c0c0c;
+  border-radius: 6px;
 }
 
 .accordion {
@@ -132,19 +140,16 @@ ol, ul {
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   grid-row: 1/3;
-  background: #288a14;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(31%, #288a14), color-stop(56%, #20ad22), color-stop(77%, #28b42d), to(rgba(51, 226, 41, 0.849177)));
-  background: linear-gradient(180deg, #288a14 31%, #20ad22 56%, #28b42d 77%, rgba(51, 226, 41, 0.849177) 100%);
+  background-color: #1DB954;
   padding: 10px 10px;
-  position: -webkit-sticky;
-  position: sticky;
-  left: 0;
+  display: fixed;
+  border-radius: 5px;
 }
 
-.search__field{
+.search__field {
   padding-left: 10px;
   height: 30px;
-  width: 300px;
+  width: 255px;
   margin-left: 30px;
   border-radius: 10px;
 }
@@ -186,16 +191,17 @@ ol, ul {
 }
 
 .content {
-  background: #252823;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(7%, #252823), to(rgba(0, 0, 0, 0.849177)));
-  background: linear-gradient(180deg, #252823 7%, rgba(0, 0, 0, 0.849177) 100%);
+  overflow-y: scroll;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+  background: inherit;
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2/3;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  grid-row: 1/3;
-  padding: 70px 20px 20px 20px;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  padding: 20px 20px 20px 20px;
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -204,6 +210,21 @@ ol, ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.content::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+}
+
+.content::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #5e5e5e;
+}
+
+.content::-webkit-scrollbar-corner {
+  background-color: transparent;
 }
 
 .music-block {
@@ -238,8 +259,8 @@ ol, ul {
 
 .card-album:hover {
   position: relative;
-  bottom: -3px;
-  left: -3px;
+  top: 3px;
+  right: 3px;
 }
 
 .card-album__image {
@@ -283,7 +304,7 @@ ol, ul {
 }
 
 .controls-panel {
-  background-color: black;
+  background-color: #0c0c0c;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-column: 1/3;
@@ -300,6 +321,9 @@ ol, ul {
   position: -webkit-sticky;
   position: sticky;
   bottom: 0;
+  padding: 0 16px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 .song {
@@ -342,7 +366,6 @@ ol, ul {
 
 .controls-panel-button {
   background-color: inherit;
-  cursor: pointer;
 }
 
 .playing-field {
@@ -361,7 +384,7 @@ ol, ul {
 }
 
 .playing-field__play {
-  background-color: white;
+  background-color: #8a8a8a;
   padding-left: 1px;
   padding-top: 5px;
   height: 32px;
@@ -369,42 +392,55 @@ ol, ul {
   border-radius: 16px;
 }
 
-.controls-panel {
-  padding: 0 16px;
-}
-
 .song__like:hover .like__color {
   fill: white;
 }
 
 .playing-field__random:hover .random__color {
-  fill: #d8d8d8;
+  fill: white;
 }
 
 .playing-field__prev:hover .prev__color {
-  fill: #d8d8d8;
+  fill: white;
 }
 
 .playing-field__play:hover {
-  background-color: #d8d8d8;
+  background-color: white;
 }
 
 .playing-field__next:hover .next__color {
-  fill: #d8d8d8;
+  fill: white;
 }
 
 .playing-field__again:hover .again__color {
-  fill: #d8d8d8;
+  fill: white;
 }
 
 .controls {
+  padding-right: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: white;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-width: 100px;
+  border-radius: 5px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+}
+
+.controls__text:hover .text__color {
+  fill: white;
+}
+
+.controls__queue:hover .queue__color {
+  fill: white;
+}
+
+.controls__volume:hover .volume__color {
+  fill: white;
 }

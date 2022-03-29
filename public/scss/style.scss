@@ -1,3 +1,5 @@
+@import "reset";
+
 $header-height: 60px;
 
 %card-options{
@@ -20,7 +22,7 @@ $header-height: 60px;
     background-color: black;
     color: white;
     padding: 10px;
-    margin-right: 10px;
+    margin-right: 15px;
     margin-left: 10px;
     font-size: 16px;
     border: none;
@@ -71,32 +73,46 @@ $header-height: 60px;
 }
 
 .app{
-      display: grid;
-      height: 100%;
-      grid-template-columns: 242px 1fr;
-      grid-template-rows: $header-height 1fr 90px;
+    overflow: hidden;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 242px 1fr;
+    grid-template-rows: $header-height 1fr 90px;
+    background-color: rgb(20, 20, 20);
 }
 
 .hat{
     grid-column: 2/3;
     grid-row: 1/2;
     display: flex;
-    justify-content: right;
+    justify-content: space-between;
     align-items: center;
+    position: sticky;
     z-index: 3;
+    flex-shrink: 0;
+    background-color: rgb(12, 12, 12);
+    border-radius: 6px;
 }
 
 .accordion{
     grid-column: 1/2;
     grid-row: 1/3;
-    background: rgb(40,138,20);
-    background: linear-gradient(180deg, rgba(40,138,20,1) 31%, rgba(32,173,34,1) 56%, rgba(40,180,45,1) 77%, rgba(51,226,41,0.8491771708683473) 100%);
+    background-color: #1DB954;
     padding: 10px 10px;
-    position: sticky;
-    left: 0;
-    //font-family: 'Open Sans', sans-serif;
-    
+    display: fixed;
+    border-radius: 5px;
+    // position: sticky;
+    // left: 0;
+    //font-family: 'Open Sans', sans-serif;   
 }
+
+.search__field{
+    padding-left: 10px;
+    height: 30px;
+    width: 255px;
+    margin-left: 30px;
+    border-radius: 10px;
+  }
 
 .navigation{
     font-family: inherit;
@@ -127,11 +143,30 @@ $header-height: 60px;
 }
 
 .content{
-    background: rgb(37,40,35);
-background: linear-gradient(180deg, rgba(37,40,35,1) 7%, rgba(0,0,0,0.8491771708683473) 100%);
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    // overflow-x: scroll;
+    // scroll-snap-type: x mandatory;
+
+    &::-webkit-scrollbar{
+        width: 10px;
+        height: 10px;
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb{
+        border-radius: 10px;
+        background-color: rgb(94, 94, 94);
+    }
+
+    &::-webkit-scrollbar-corner{
+        background-color: transparent;
+    }
+
+    background: inherit;
     grid-column: 2/3;
-    grid-row: 1/3;
-    padding: ($header-height + 10px) 20px 20px 20px;
+    grid-row: 2/3;
+    padding: 20px 20px 20px 20px;
     color: white;
     display: flex;
     flex-direction: column;
@@ -144,7 +179,7 @@ background: linear-gradient(180deg, rgba(37,40,35,1) 7%, rgba(0,0,0,0.8491771708
 
 .block-title{
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     align-items: center;
 }
 
@@ -164,8 +199,8 @@ background: linear-gradient(180deg, rgba(37,40,35,1) 7%, rgba(0,0,0,0.8491771708
 
 .card-album:hover{
     position: relative;
-    bottom: -3px;
-    left: -3px;
+    top: 3px;
+    right: 3px;
 }
 
 .card-album__image{
@@ -213,7 +248,7 @@ background: linear-gradient(180deg, rgba(37,40,35,1) 7%, rgba(0,0,0,0.8491771708
 }
 
 .controls-panel{
-    background-color: black;
+    background-color: rgb(12, 12, 12);
     grid-column: 1/3;
     grid-row: 3/4;
     border-top: 1px solid rgb(54, 54, 54);
@@ -221,6 +256,8 @@ background: linear-gradient(180deg, rgba(37,40,35,1) 7%, rgba(0,0,0,0.8491771708
     justify-content: space-between;
     position: sticky;
     bottom: 0;
+    padding: 0 16px;
+    flex-shrink: 0;
 }
 
 .song{
@@ -257,7 +294,6 @@ background: linear-gradient(180deg, rgba(37,40,35,1) 7%, rgba(0,0,0,0.8491771708
 
 .controls-panel-button{
     background-color: inherit;
-    cursor: pointer;
 }
 
 .playing-field{
@@ -270,16 +306,12 @@ background: linear-gradient(180deg, rgba(37,40,35,1) 7%, rgba(0,0,0,0.8491771708
 }
 
 .playing-field__play{
-    background-color: white;
+    background-color: rgb(138, 138, 138);
     padding-left: 1px;
     padding-top: 5px;
     height: 32px;
     width: 32px;
     border-radius: 16px;
-}
-
-.controls-panel{
-    padding: 0 16px;
 }
 
 .song__like:hover{
@@ -290,37 +322,58 @@ background: linear-gradient(180deg, rgba(37,40,35,1) 7%, rgba(0,0,0,0.8491771708
 
 .playing-field__random:hover{
     .random__color{
-        fill: rgb(216, 216, 216);
+        fill: white;
     }
 }
 
 .playing-field__prev:hover{
     .prev__color{
-        fill: rgb(216, 216, 216);
+        fill: white;
     }
 }
 
 .playing-field__play:hover{
-    background-color: rgb(216, 216, 216);
+    background-color: white;
 }
 
 .playing-field__next:hover{
     .next__color{
-        fill: rgb(216, 216, 216);
+        fill: white;
     }
 }
 
 .playing-field__again:hover{
     .again__color{
-        fill: rgb(216, 216, 216);
+        fill: white;
     }
 }
 
 .controls{
+    padding-right: 10px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    min-width: 100px;
+    border-radius: 5px;
     //font-family: 'Open Sans', sans-serif;
-    color: white;
     flex-shrink: 0;
+}
+
+.controls__text:hover{
+    .text__color{
+        fill: white;
+    }
+}
+
+.controls__queue:hover{
+    .queue__color{
+        fill: white;
+    }
+}
+
+.controls__volume:hover{
+    .volume__color{
+        fill: white;
+    }
 }
 
