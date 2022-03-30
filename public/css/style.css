@@ -1,0 +1,446 @@
+html, body, div, button, span, applet, object, iframe, table, caption, tbody, tfoot, thead, tr, th, td,
+del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* remember to define focus styles! */
+:focus {
+  outline: 0;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+.card-album, .card-singer {
+  display: block;
+  padding: 15px;
+  width: 200px;
+  height: 280px;
+  background-color: #202020;
+  border-radius: 10px;
+  margin-left: 20px;
+}
+
+.account-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 140px;
+  height: 40px;
+  position: relative;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  margin-right: 15px;
+  margin-left: 10px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+}
+
+.account-button__img {
+  border-radius: 10px;
+}
+
+.account-button__arrow-down {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  margin-right: 5px;
+}
+
+.account-button__content {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0px;
+  background-color: #3f3f3f;
+  min-width: 130px;
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.account-button__link {
+  color: #e9e9e9;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 10px;
+}
+
+.account-button__link:hover {
+  background-color: #4e4e4e;
+}
+
+.account-button:hover {
+  background-color: #4e4e4e;
+}
+
+.account-button:hover .account-button__content {
+  display: block;
+}
+
+.app {
+  overflow: hidden;
+  display: -ms-grid;
+  display: grid;
+  height: 100vh;
+  -ms-grid-columns: 242px 1fr;
+      grid-template-columns: 242px 1fr;
+  -ms-grid-rows: 60px 1fr 90px;
+      grid-template-rows: 60px 1fr 90px;
+  background-color: #141414;
+}
+
+.hat {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 3;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  background-color: #0c0c0c;
+  border-radius: 6px;
+}
+
+.accordion {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1/3;
+  background-color: #1DB954;
+  padding: 10px 10px;
+  display: fixed;
+  border-radius: 5px;
+}
+
+.search__field {
+  padding-left: 10px;
+  height: 30px;
+  width: 255px;
+  margin-left: 30px;
+  border-radius: 10px;
+}
+
+.navigation {
+  font-family: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 10px 10px;
+  margin-top: 20px;
+}
+
+.link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: 900;
+}
+
+.link:hover {
+  color: #3b3737;
+}
+
+.navigation__text {
+  margin-left: 10px;
+  padding-top: 3px;
+  font-size: 18px;
+}
+
+.content {
+  overflow-y: scroll;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+  background: inherit;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  padding: 20px 20px 20px 20px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.content::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+}
+
+.content::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #5e5e5e;
+}
+
+.content::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+.music-block {
+  margin-bottom: 15px;
+}
+
+.block-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.block-title__all {
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.card-album:hover {
+  position: relative;
+  top: 3px;
+  right: 3px;
+}
+
+.card-album__image {
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.card-album__name {
+  display: inline-block;
+  color: white;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.card-album__singer {
+  display: inline-block;
+  color: #808080;
+}
+
+.card-singer:hover {
+  position: relative;
+  bottom: -3px;
+  left: -3px;
+}
+
+.card-singer__image {
+  margin-bottom: 10px;
+  border-radius: 85px;
+}
+
+.card-singer__name {
+  display: inline-block;
+  color: white;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.card-singer__tag {
+  display: inline-block;
+  color: #808080;
+}
+
+.controls-panel {
+  background-color: #0c0c0c;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3/4;
+  border-top: 1px solid #363636;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  padding: 0 16px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.song {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 250px;
+  max-width: 250px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.song__name {
+  color: white;
+  cursor: pointer;
+  text-overflow: ellipsis;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.song__singer {
+  color: grey;
+  cursor: pointer;
+}
+
+.song__singer:hover {
+  color: white;
+}
+
+.song__like {
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.controls-panel-button {
+  background-color: inherit;
+}
+
+.playing-field {
+  padding: 5px;
+  margin: 0px 30px;
+  min-width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.playing-field__play {
+  background-color: #8a8a8a;
+  padding-left: 1px;
+  padding-top: 5px;
+  height: 32px;
+  width: 32px;
+  border-radius: 16px;
+}
+
+.song__like:hover .like__color {
+  fill: white;
+}
+
+.playing-field__random:hover .random__color {
+  fill: white;
+}
+
+.playing-field__prev:hover .prev__color {
+  fill: white;
+}
+
+.playing-field__play:hover {
+  background-color: white;
+}
+
+.playing-field__next:hover .next__color {
+  fill: white;
+}
+
+.playing-field__again:hover .again__color {
+  fill: white;
+}
+
+.controls {
+  padding-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-width: 100px;
+  border-radius: 5px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.controls__text:hover .text__color {
+  fill: white;
+}
+
+.controls__queue:hover .queue__color {
+  fill: white;
+}
+
+.controls__volume:hover .volume__color {
+  fill: white;
+}
